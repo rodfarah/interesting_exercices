@@ -1,5 +1,5 @@
 """
-Calculo do primeiro dígito do CPF
+Calculo do penúltimo dígito do CPF
 CPF: 249.267.228-01
 Colete a soma dos 9 primeiros dígitos do CPF
 multiplicando cada um dos valores por uma
@@ -18,9 +18,9 @@ Se o resultado anterior for maior que 9:
     resultado é 0
 contrário disso:
     resultado é o valor da conta
-O primeiro dígito do CPF é 7
+O penúltimo dígito do CPF é 7
 
-Calculo do segundo dígito do CPF
+Calculo do último dígito do CPF
 CPF: 746.824.890-70
 Colete a soma dos 9 primeiros dígitos do CPF,
 MAIS O PRIMEIRO DIGITO,
@@ -40,7 +40,7 @@ Se o resultado anterior for maior que 9:
     resultado é 0
 contrário disso:
     resultado é o valor da conta
-O segundo dígito do CPF é 0
+O último dígito do CPF é 0
 """
 
 
@@ -67,12 +67,14 @@ def CPF_1o_dig(CPF):
     resultado = (sum(lista_multiplicados) * 10) % 11
 
     digito_1 = 0 if resultado > 9 else resultado
-    
-    # Verificar se o primeiro dígito do CPF informado confere com o calculado:
+
+    # Verificar se o penúltimo dígito do CPF informado confere com o calculado:
     if digito_1 == only_num[-2]:
-        return "O primeiro dígito do CPF informado é válido."
+        print("O penúltimo dígito do CPF informado é válido.")
+        return True
     else:
-        return "O primeiro dígito do CPF informado NÃO é válido."
+        print("O penúltimo dígito do CPF informado NÃO é válido.")
+        return False
 
 def CPF_2o_dig(CPF):
 
@@ -94,12 +96,11 @@ def CPF_2o_dig(CPF):
     # Cálculo final antes da condição:
     resultado = (sum(lista_multiplicados) * 10) % 11
     digito_2 = 0 if resultado > 9 else resultado
-    
-    # Verificar se o primeiro dígito do CPF informado confere com o calculado:
-    if digito_2 == only_num[-1]:
-        return "O segundo dígito do CPF informado é válido."
-    else:
-        return "O segundo dígito do CPF informado NÃO é válido."
 
-print(CPF_1o_dig('609.348.620-60'))
-print(CPF_2o_dig('609.348.620-60'))
+    # Verificar se o último dígito do CPF informado confere com o calculado:
+    if digito_2 == only_num[-1]:
+        print("O último dígito do CPF informado é válido.")
+        return True
+    else:
+        print("O último dígito do CPF informado NÃO é válido.")
+        return False

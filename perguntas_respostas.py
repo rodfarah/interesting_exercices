@@ -19,8 +19,8 @@ perguntas = [
     },
 ]
 
-question_num = 1
-w_a_count = 0
+question_num = 1  # Question Number
+w_a_count = 0  # Wright Answer Counter
 
 while question_num <= len(perguntas):
     for pergunta in perguntas:
@@ -32,6 +32,7 @@ while question_num <= len(perguntas):
             print(num, option, sep=') ')
             if option == pergunta['Resposta']:
                 wright_ans.append(str(num))
+
         answer = input('Qual é o número da sua opção? ')
         if answer == wright_ans[0]:
             print(f'Acertou! \n')
@@ -42,4 +43,5 @@ while question_num <= len(perguntas):
             print(f'Errou!\n')
             question_num += 1
             continue
+
 print(f'Você acertou {w_a_count} de {len(perguntas)} perguntas.')
