@@ -18,7 +18,7 @@ def Secret_Word_Game(word):
 
     print('*Secret Word Game*\n')
 
-    # Let's ask the user to type how many tries he would like \
+    # Let's ask the user how many tries he would like \
     # to have and let's check if it is really a number:
     word_lenght = len(word)
     print(
@@ -32,7 +32,7 @@ def Secret_Word_Game(word):
             hmtries_int = int(hmtries_str)
             if hmtries_int < (word_lenght - 2):
                 print(
-                    f'The secret word has {word_lenght} letters! I\'d recommend you have at least {word_lenght - 2} tries! \n')
+                    f'The secret word has {word_lenght} letters! I think you should have at least {word_lenght - 2} tries! \n')
                 continue
             break
         except:
